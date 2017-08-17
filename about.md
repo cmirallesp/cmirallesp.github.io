@@ -7,10 +7,7 @@ published: true
 
 
 
-;### More Information
+### More Information
 
-;A place to include any other types of information that you'd like to include about yourself.
-
-; ### Contact me
-
-; [XXX@YYY](mailto:XXX@YYY)
+I'm a software engineer that love everything around this topic, from modeling to coding. 
+Now finishing a master in Artificial Intelligence to update my knowledge and skills in this area.   
