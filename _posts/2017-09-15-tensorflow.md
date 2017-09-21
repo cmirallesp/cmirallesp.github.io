@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tensorflow howto
-tags: python numpy pandas scikit-learn matplotlib tensorflow
+tags: numpy pandas scikit-learn matplotlib tensorflow
 ---
 
 <!-- vim-markdown-toc GFM -->
