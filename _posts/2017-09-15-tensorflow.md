@@ -25,7 +25,7 @@ NOTE: There are other alternatives as virtualenv, but I couldn't use it with the
 
 3. numpy, pandas,...
 ```
-pip3 install --upgrade numpy scipy scikit-learn pandas jupyter matplotlib
+pip3 install --upgrade numpy scipy scikit-learn pandas jupyter matplotlib pydot
 ```
 
 4. tensorflow
