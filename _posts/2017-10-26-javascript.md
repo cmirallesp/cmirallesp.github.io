@@ -12,7 +12,13 @@ tags: javascript js node npm
 * [Flow (javascript with types)](#flow-javascript-with-types)
 	* [Installation](#installation-1)
 	* [Usage](#usage)
-	* [Usage with babel](#usage-with-babel)
+	* [Configuring babel](#configuring-babel)
+	* [Nvim configuration](#nvim-configuration)
+* [Eslint](#eslint)
+	* [Flowtype](#flowtype)
+	* [Configuration (.eslint)](#configuration-eslint)
+* [Test (Mocha and Chai)](#test-mocha-and-chai)
+	* [Installation](#installation-2)
 
 <!-- vim-markdown-toc -->
 
@@ -42,6 +48,7 @@ npm install --save-dev babel-preset-flow
 ```
 
 ## Usage
+
 Add a "flow" script to your package.json:
 
 ```json
@@ -56,7 +63,10 @@ Add a "flow" script to your package.json:
   }
 }
 ```
-## Usage with babel
+
+Now you can do `node run flow`
+
+## Configuring babel
 
 1. Via .babelrc
 
@@ -69,3 +79,121 @@ Add a "flow" script to your package.json:
 2. Via command line `babel --presets flow script.js`
 
 [https://flow.org/en/docs/](https://flow.org/en/docs/)
+
+## Nvim configuration
+
+[https://github.com/ryyppy/flow-vim-quickfix](https://github.com/ryyppy/flow-vim-quickfix)
+[https://medium.com/@renatoagds/flow-vim-the-long-journey-497e020114e5](https://medium.com/@renatoagds/flow-vim-the-long-journey-497e020114e5)
+
+# Eslint
+
+```bash
+npm install eslint --save-dev
+npm install babel-eslint --save-dev
+```
+## Flowtype
+
+```bash
+npm install eslint-plugin-flowtype --save-dev
+```
+
+## Configuration (.eslint)
+
+Configure to use [recommended rules](https://github.com/gajus/eslint-plugin-flowtype/blob/master/src/configs/recommended.json)
+
+```json
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
+	"extends": [
+    "plugin:flowtype/recommended"
+  ],
+}
+```
+
+Or set your own rules
+```json
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
+  "rules": {
+    "flowtype/boolean-style": [
+      2,
+      "boolean"
+    ],
+    "flowtype/define-flow-type": 1,
+    "flowtype/delimiter-dangle": [
+      2,
+      "never"
+    ],
+    "flowtype/generic-spacing": [
+      2,
+      "never"
+    ],
+    "flowtype/no-primitive-constructor-types": 2,
+    "flowtype/no-types-missing-file-annotation": 2,
+    "flowtype/no-weak-types": 2,
+    "flowtype/object-type-delimiter": [
+      2,
+      "comma"
+    ],
+    "flowtype/require-parameter-type": 2,
+    "flowtype/require-return-type": [
+      2,
+      "always",
+      {
+        "annotateUndefined": "never"
+      }
+    ],
+    "flowtype/require-valid-file-annotation": 2,
+    "flowtype/semi": [
+      2,
+      "always"
+    ],
+    "flowtype/space-after-type-colon": [
+      2,
+      "always"
+    ],
+    "flowtype/space-before-generic-bracket": [
+      2,
+      "never"
+    ],
+    "flowtype/space-before-type-colon": [
+      2,
+      "never"
+    ],
+    "flowtype/type-id-match": [
+      2,
+      "^([A-Z][a-z0-9]+)+Type$"
+    ],
+    "flowtype/union-intersection-spacing": [
+      2,
+      "always"
+    ],
+    "flowtype/use-flow-type": 1,
+    "flowtype/valid-syntax": 1
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
+  }
+}
+```
+
+
+
+# Test (Mocha and Chai)
+
+Mocha is a test framework while chai allows us to write specs as assert/should/expect
+
+## Installation
+
+`npm install --save-dev mocha chai` (or globally `npm install --global mocha chai`)
+
+
+
